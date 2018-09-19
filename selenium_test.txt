@@ -1,0 +1,14 @@
+ 一. docker命令（拉最新的selenium docker版本）:
+docker run -d -p 4444:4444 --name selenium-hub selenium/hub
+docker run -d --name node-chrome -p 5900:5900 --link selenium-hub:hub -v /dev/shm:/dev/shm selenium/node-chrome-debug
+
+二. 执行步骤
+1. 拉取RbotFramework用例（随便一个RF用例就可以）git pull https://github.com/wck821829906/TestProject.git
+2. 填写HUB参数： replace "http://10.253.171.0:4444/wd/hub"; with your hub address in TestSuite.txt
+3. 保证RF相关组件版本
+pip install robotframework==3.0.4
+pip install robotframework-seleniumlibrary==3.1.1
+pip install selenium==3.13.0
+4. 执行pybot命令或者RIDE上面点Run按钮： 
+pybot ${yourTestProjectlocation}/TestProject,
+例如: pybot D:\workspace\TestProject
