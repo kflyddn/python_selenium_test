@@ -20,7 +20,7 @@ class TestLogin(unittest.TestCase):
             "marionette": True,
         }
         try:
-            self.driver = webdriver.Remote("http://192.168.14.93:4444/wd/hub",desired_capabilities=firefox_capabilities)
+            self.driver = webdriver.Remote("http://192.168.86.19:4444/wd/hub",desired_capabilities=firefox_capabilities)
             # 打开url
             self.driver.get("https://udecide-demo.digitalalchemy.net.au/login")
         except Exception as e:
